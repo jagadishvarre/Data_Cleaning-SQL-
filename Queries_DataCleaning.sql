@@ -61,15 +61,15 @@ where a.PropertyAddress is  null
 
   --------- 3. seperate the names in address using substring and parse 
 
-  select PropertyAddress from Portfolioprojects..[Nashville Housing]
+select PropertyAddress from Portfolioprojects..[Nashville Housing]
   
-  -- this address has address together with city name ' so we need to seperate them into two columns 
+-- this address has address together with city name ' so we need to seperate them into two columns 
 
-  select PropertyAddress , substring(PropertyAddress,1,CHARINDEX(',',PropertyAddress)-1) as [Corrected Address]
-  from Portfolioprojects..[Nashville Housing]
+select PropertyAddress , substring(PropertyAddress,1,CHARINDEX(',',PropertyAddress)-1) as [Corrected Address]
+from Portfolioprojects..[Nashville Housing]
 
-   select PropertyAddress , substring(PropertyAddress,CHARINDEX(',',PropertyAddress)+1 , len(PropertyAddress)) as [Corrected city]  
-  from Portfolioprojects..[Nashville Housing]
+ select PropertyAddress , substring(PropertyAddress,CHARINDEX(',',PropertyAddress)+1 , len(PropertyAddress)) as [Corrected city]  
+ from Portfolioprojects..[Nashville Housing]
 
 
 alter table Portfolioprojects..[Nashville Housing]
